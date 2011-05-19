@@ -9,7 +9,7 @@
 	<version>0.20.2-SNAPSHOT</version>
 	<name>Maven Plugin for Hadoop </name>
 	<description>Maven plugin for Hadoop</description>
-	<url>http://github.com/akkumar/maven-hadoop/tree/master</url>
+	<url>http://github.com/memonews/maven-hadoop/tree/master</url>
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -19,24 +19,32 @@
 	</licenses>
 	<properties>
 		<mvn.plugin.version>2.0.9</mvn.plugin.version>
-		<git.url>http://github.com/akkumar/maven-hadoop.git</git.url>
+		<git.url>http://github.com/memonews/maven-hadoop.git</git.url>
 	</properties>
 	<scm>
-		<connection>scm:git:git://github.com/akkumar/maven-hadoop.git</connection>
-		<developerConnection>scm:git:git@github.com:akkumar/maven-hadoop.git</developerConnection>
-		<url>http://github.com/akkumar/maven-hadoop/tree/master</url>
+		<connection>scm:git:git@github.com:memonews/maven-hadoop.git</connection>
+		<developerConnection>scm:git:git@github.com:memonews/maven-hadoop.git</developerConnection>
+		<url>https://jkoenig@github.com/memonews/maven-hadoop.git</url>
 	</scm>
-	<inceptionYear>2010</inceptionYear>
+	<inceptionYear>2011</inceptionYear>
 	<prerequisites>
 		<maven>2.0.9</maven>
 	</prerequisites>
 	<issueManagement>
-		<url>http://github.com/akkumar/maven-hadoop/issues</url>
+		<url>https://github.com/memonews/maven-hadoop/issues</url>
 	</issueManagement>
 	<developers>
 		<developer>
 			<id>kaykay</id>
 			<name>Karthik Kumar</name>
+		</developer>
+		<developer>
+			<id>jkoenig</id>
+			<name>Jean-Pierre Koenig</name>
+		</developer>
+		<developer>
+			<id>nkuebler</id>
+			<name>Nils Kuebler</name>
 		</developer>
 	</developers>
 	<mailingLists>
@@ -44,7 +52,7 @@
 	</mailingLists>
 	<organization>
 		<name>Maven Hadoop</name>
-		<url>http://github.com/akkumar/maven-hadoop</url>
+		<url>https://github.com/memonews</url>
 	</organization>
 	<build>
 		<plugins>
@@ -57,7 +65,6 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
