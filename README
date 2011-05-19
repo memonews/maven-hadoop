@@ -34,7 +34,7 @@ Usage / Goals:
 Warning: the project is in its pre-infancy serving a very limited purpose at the moment of packing files. 
 More use cases are planned down the pipeline.
 
-* pack:
+* hadoop:pack:
 ------
 
 Creates the jar file to be submitted to the hadoop job engine. 
@@ -50,7 +50,7 @@ Once created, this could be started with the hadoop jar engine.
 
 $ $HADOOP_HOME/bin/hadoop jar  $basedir/target/hadoop-deploy/${artifact.name}-{artifact.version}-hdeploy.jar   job.launching.class
 
-* deploy:
+* hadoop:deploy:
 --------
 
 Deploys the packed job jar to the given path on hdfs.
