@@ -1,9 +1,7 @@
 Maven Plugin for Hadoop
 -------------------------
-http://maven-hadoop.blogspot.com . 
-
   
-Copyright (C) 2010 Karthik Kumar
+Copyright (C) 2011 MeMo News AG
 
 
 
@@ -18,13 +16,14 @@ Installation
 The plugin should be available in the central repository soon.
 
 <plugin> 
-      <groupId>com.github.maven-hadoop.plugin</groupId>
-      <artifactId>maven-hadoop-plugin</artifactId>
-       <version>0.20.1</version>
-       <configuration>
-           <hadoopHome>/opt/software/hadoop</hadoopHome>
-       </configuration>
-   </plugin>
+   <groupId>com.github.maven-hadoop.plugin</groupId>
+   <artifactId>maven-hadoop-plugin</artifactId>
+    <version>0.20.2-SNAPSHOT</version>
+    <configuration>
+        <hadoopHome>/opt/software/hadoop</hadoopHome>
+        <path>hdfs://localhost:8020/user/${user.name}</path>
+    </configuration>
+</plugin>
       
      
 where , hadoopHome  is set to HADOOP_HOME installation directory of the version against which this needs to be compiled against.
@@ -38,7 +37,7 @@ More use cases are planned down the pipeline.
 * pack:
 ------
 
-Currently a single goal is available called as 'pack' that creates the jar file to be submitted to the hadoop job engine. 
+Creates the jar file to be submitted to the hadoop job engine. 
 
 The jar contains a directory called ./lib , that contains all the dependent jars in the same. 
 The classes of the current project are also available in the same. 
@@ -47,9 +46,14 @@ The jar would be created in $basedir/target/hadoop-deploy/${ant.project.name}-hd
 
 $ mvn hadoop:pack
 
-Once created , this could be submitted to the hadoop jar engine 
+Once created, this could be started with the hadoop jar engine. 
 
-$ $HADOOP_HOME/bin/hadoop jar  $basedir/target/hadoop-deploy/${ant.project.name}-hdeploy.jar   job.launching.class
+$ $HADOOP_HOME/bin/hadoop jar  $basedir/target/hadoop-deploy/${artifact.name}-{artifact.version}-hdeploy.jar   job.launching.class
+
+* deploy:
+--------
+
+Deploys the packed job jar to the given path on hdfs.
 
    
       
