@@ -50,7 +50,7 @@ Once created, this could be started with the hadoop jar engine.
 
 $ $HADOOP_HOME/bin/hadoop jar  $basedir/target/hadoop-deploy/${artifact.name}-{artifact.version}-hdeploy.jar   job.launching.class
 
-* hadoop:deploy:
+* mvn hadoop:deploy
 --------
 
 Deploys the packed job jar to the given path on hdfs.
