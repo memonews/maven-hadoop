@@ -45,25 +45,23 @@ import org.apache.maven.project.MavenProject;
  * <h3>Installation</h3> Install the plugin as follows.
  * 
  * <pre>
- * <plugin>
- * 	<groupId>com.github.maven-hadoop.plugin</groupId>
- * 	<artifactId>maven-hadoop-plugin</artifactId>
- * 	<version>0.20.2-SNAPSHOT</version>
- * 	<configuration>
- * 		<hadoopHome>/var/lib/hadoop-0.20.2-cdh3u0</hadoopHome>
- * 		<path>hdfs://localhost:8020/user/${user.name}</path>
- * 	</configuration>
- * 	<executions>
- * 		<execution>
- * 			<phase>package</phase>
- * 			<goals>
- * 				<goal>pack</goal>
- * 			</goals>
- * 		</execution>
- * 	</executions>
- * </plugin>
- * </pre>
- * 
+ * &lt;plugin&gt;
+ * 	&lt;groupId&gt;com.github.maven-hadoop.plugin&lt;/groupId&gt;
+ * 	&lt;artifactId&gt;maven-hadoop-plugin&lt;/artifactId&gt;
+ * 	&lt;version&gt;0.20.2-SNAPSHOT&lt;/version&gt;
+ * 	&lt;configuration&gt;
+ * 		&lt;hadoopHome&gt;/var/lib/hadoop-0.20.2-cdh3u0&lt;/hadoopHome&gt;
+ * 		&lt;path&gt;hdfs://localhost:8020/user/${user.name}&lt;/path&gt;
+ * 	&lt;/configuration&gt;
+ * 	&lt;executions&gt;
+ * 		&lt;execution&gt;
+ * 			&lt;phase&gt;package&lt;/phase&gt;
+ * 			&lt;goals&gt;
+ * 				&lt;goal&gt;pack&lt;/goal&gt;
+ * 			&lt;/goals&gt;
+ * 		&lt;/execution&gt;
+ * 	&lt;/executions&gt;
+ * &lt;/plugin&gt;
  * </pre>
  * 
  * <h3>Usage:</h3>
