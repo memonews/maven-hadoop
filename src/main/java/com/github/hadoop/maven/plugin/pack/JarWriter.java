@@ -1,4 +1,4 @@
-package com.github.hadoop.maven.plugin;
+package com.github.hadoop.maven.plugin.pack;
 
 import java.io.BufferedInputStream;
 import java.io.File;
