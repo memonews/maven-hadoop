@@ -31,10 +31,7 @@ where , hadoopHome  is set to HADOOP_HOME installation directory of the version 
 Usage / Goals:
 =============
 
-Warning: the project is in its pre-infancy serving a very limited purpose at the moment of packing files. 
-More use cases are planned down the pipeline.
-
-* hadoop:pack:
+* mvn hadoop:pack
 ------
 
 Creates the jar file to be submitted to the hadoop job engine. 
@@ -42,9 +39,7 @@ Creates the jar file to be submitted to the hadoop job engine.
 The jar contains a directory called ./lib , that contains all the dependent jars in the same. 
 The classes of the current project are also available in the same. 
 
-The jar would be created in $basedir/target/hadoop-deploy/${ant.project.name}-hdeploy.jar  . 
-
-$ mvn hadoop:pack
+The jar would be created in $basedir/target/hadoop-deploy/${artifact.name}-{artifact.version}-hdeploy.jar. 
 
 Once created, this could be started with the hadoop jar engine. 
 
@@ -53,7 +48,7 @@ $ $HADOOP_HOME/bin/hadoop jar  $basedir/target/hadoop-deploy/${artifact.name}-{a
 * mvn hadoop:deploy
 --------
 
-Deploys the packed job jar to the given path on hdfs.
+Deploys the packed job to the given path on hdfs.
 
    
       
