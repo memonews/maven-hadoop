@@ -61,13 +61,14 @@ import org.apache.maven.project.artifact.InvalidDependencyVersionException;
  * <pre>
  * 
  *  &lt;plugin&gt; 
- *         &lt;groupId&gt;com.github.maven-hadoop.plugin&lt;/groupId&gt;
- *         &lt;artifactId&gt;maven-hadoop-plugin&lt;/artifactId&gt;
- *         &lt;version&gt;0.20.0&lt;/version&gt;
- *         &lt;configuration&gt;
- *           &lt;hadoopHome&gt;/opt/software/hadoop&lt;/hadoopHome&gt;
- *         &lt;/configuration&gt;
- *      &lt;/plugin&gt;
+ *     &lt;groupId&gt;com.github.maven-hadoop.plugin&lt;/groupId&gt;
+ *     &lt;artifactId&gt;maven-hadoop-plugin&lt;/artifactId&gt;
+ *     &lt;version&gt;0.20.0&lt;/version&gt;
+ *     &lt;configuration&gt;
+ *       &lt;hadoopHome&gt;/opt/software/hadoop&lt;/hadoopHome&gt;
+ * 	 &lt;mainClass&gt;com.memonews.common.mapred.cleaner.FeedTableCleaner&lt;/mainClass&gt;
+ *     &lt;/configuration&gt;
+ *  &lt;/plugin&gt;
  * </pre>
  * 
  * <h3>Usage:</h3>
@@ -116,6 +117,14 @@ public class PackMojo extends AbstractMojo {
      * @parameter
      */
     private File hadoopHome;
+
+    /**
+     * The main class within the artifact to be executed when running hadoop jar
+     * <archive>.
+     * 
+     * @parameter
+     */
+    private String mainClass;
 
     /**
      * @parameter expression="${project.artifacts}"
@@ -246,7 +255,7 @@ public class PackMojo extends AbstractMojo {
 	FileOutputStream fos = null;
 	try {
 	    fos = new FileOutputStream(jarName);
-	    this.jarWriter.packToJar(jarRootDir, fos);
+	    this.jarWriter.packToJar(jarRootDir, fos, this.mainClass);
 	    return jarName;
 	} finally {
 	    IOUtils.closeQuietly(fos);
