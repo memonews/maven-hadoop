@@ -80,11 +80,9 @@ import org.apache.maven.project.artifact.InvalidDependencyVersionException;
  * Pack the dependencies of the project , along with the class files in a single
  * jar , enabled to be submitted to a M-R instance
  * 
- * @goal hadoop:pack
- * @phase package
+ * @goal pack
  * @requiresDependencyResolution compile
  * @execute phase="compile"
- * 
  */
 public class PackMojo extends AbstractMojo {
 
