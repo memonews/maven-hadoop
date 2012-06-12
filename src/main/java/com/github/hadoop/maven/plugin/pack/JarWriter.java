@@ -55,7 +55,9 @@ public class JarWriter {
     public void packToJar(final File jarRootDir, final OutputStream os, final String mainClass) throws FileNotFoundException, IOException {
 	final Manifest manifest = new Manifest();
 	manifest.getMainAttributes().put(Attributes.Name.MANIFEST_VERSION, "1.0");
-	manifest.getMainAttributes().put(Attributes.Name.MAIN_CLASS, mainClass);
+	if (mainClass != null) {
+	  manifest.getMainAttributes().put(Attributes.Name.MAIN_CLASS, mainClass);
+	}
 
 	final JarOutputStream target = new JarOutputStream(os, manifest);
 	for (final File nestedFile : jarRootDir.listFiles()) {
